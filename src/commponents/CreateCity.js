@@ -12,9 +12,7 @@ export default connect(null, { getCity })(function CreateCity(props) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const country = countryName[0].toUpperCase() + countryName.slice(1);
-    console.log("Submit", country);
-    props.getCity(country);
+    props.getCity(countryName);
   };
 
   return (
