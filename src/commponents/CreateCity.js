@@ -6,6 +6,9 @@ import { getCity } from "../actions/city";
 export default connect(null, { getCity })(function CreateCity(props) {
   const [countryName, setCountryName] = useState("");
 
+  CreateCity.propTypes = {
+    getCity: PropTypes.func.isRequired,
+  };
   const onChange = (e) => {
     setCountryName(e.target.value);
   };

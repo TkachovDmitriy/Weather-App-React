@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_CITY, DISPLAY_CITY, GET_CITY_DETAILS } from "./types";
+import { DISPLAY_CITY, GET_CITY_DETAILS } from "./types";
 import { createMessage, returnErrors } from "./messages";
 
 const API_KEY = "8ec43a2f28a7f62023e6911704d8d39c";
@@ -36,11 +36,14 @@ export const displayCity = () => (dispatch) => {
   try {
     const dataForCity = [];
     const city = { ...localStorage };
-    for (let item in city) {
-      dataForCity.push(JSON.parse(city[item]));
-    }
-    let sortData = dataForCity.sort();
-    console.log(sortData);
+    // console.log(city);
+    Object.keys(city).forEach((key) => {
+      // console.log(key);
+      dataForCity.push(JSON.parse(city[key]));
+    });
+
+    // let sortData = dataForCity.sort((a, b) => new Date(a.dt) - new Date(b.dt));
+    // console.log(sortData);
     dispatch({
       type: DISPLAY_CITY,
       payload: dataForCity,

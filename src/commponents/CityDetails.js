@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { getCityDetails } from "../actions/city";
+import PropTypes from "prop-types";
 import Chart from "./Chart";
 
 const mapStateToProps = (state) => ({
@@ -11,6 +12,11 @@ export default connect(mapStateToProps, { getCityDetails })(
   function CityDetails(props) {
     const [coordParams, setCoordParams] = useState([]);
     // const [curentWeather, setCurentWeather] = useState({});
+
+    CityDetails.propTypes = {
+      cityDetails: PropTypes.object.isRequired,
+      getCitydetails: PropTypes.func,
+    };
     const setCoord = () =>
       setCoordParams([
         props.match.params.paramOne,
@@ -48,27 +54,27 @@ export default connect(mapStateToProps, { getCityDetails })(
                   <tr>
                     <td>Cloudiness</td>
                     <td>
-                      <i class="fas fa-cloud mr-2"></i>{" "}
+                      <i className="fas fa-cloud mr-2"></i>{" "}
                       {current.weather[0].description}
                     </td>
                   </tr>
                   <tr>
                     <td>Humidity</td>
                     <td>
-                      <i class="fas fa-tint mr-2"></i> {current.humidity} %
+                      <i className="fas fa-tint mr-2"></i> {current.humidity} %
                     </td>
                   </tr>
                   <tr>
                     <td>Sunrise</td>
                     <td>
-                      <i class="fas fa-sun mr-2"></i>{" "}
+                      <i className="fas fa-sun mr-2"></i>{" "}
                       {`${sunrise.getHours()}:${sunrise.getMinutes()}`}
                     </td>
                   </tr>
                   <tr>
                     <td>Sunset</td>
                     <td>
-                      <i class="far fa-sun mr-2"></i>{" "}
+                      <i className="far fa-sun mr-2"></i>{" "}
                       {`${sunset.getHours()}:${sunset.getMinutes()}`}
                     </td>
                   </tr>
@@ -87,9 +93,9 @@ export default connect(mapStateToProps, { getCityDetails })(
       );
     }
     return (
-      <div class="progress m-1">
+      <div className="progress m-1">
         <div
-          class="progress-bar bg-secondary progress-bar-striped progress-bar-animated"
+          className="progress-bar bg-secondary progress-bar-striped progress-bar-animated"
           role="progressbar"
           aria-valuenow="100"
           aria-valuemin="0"

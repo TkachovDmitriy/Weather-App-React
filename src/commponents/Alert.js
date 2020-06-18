@@ -14,7 +14,6 @@ export class Alerts extends Component {
       if (error) alert.error(`${error.msg.message}`);
     }
     if (message !== prevProps.message) {
-      console.log(message);
       if (message.updateCityInfo) alert.success(message.updateCityInfo);
       if (message.addCity) alert.success(message.addCity);
       if (message.deleteCity) alert.success(message.deleteCity);

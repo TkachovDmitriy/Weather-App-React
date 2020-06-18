@@ -2,10 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 import { deleteCity, updateCity } from "../actions/city";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export default connect(null, { deleteCity, updateCity })(function CardCity(
   props
 ) {
+  CardCity.propTypes = {
+    deleteCity: PropTypes.func.isRequired,
+    updateCity: PropTypes.func.isRequired,
+  };
+
   const updateInfo = () => {
     let cityName = props.name;
     console.log(cityName);

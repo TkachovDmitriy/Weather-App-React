@@ -18,6 +18,11 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, { displayCity })(function Dashboard(
   props
 ) {
+  Dashboard.propTypes = {
+    city: PropTypes.array.isRequired,
+    displayCity: PropTypes.func.isRequired,
+  };
+
   useEffect(() => {
     props.displayCity();
   }, []);
