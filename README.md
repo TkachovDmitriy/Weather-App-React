@@ -17,5 +17,5 @@ $ npm start
 
 ## Project screens
 
-![Preview](https://github.com/TkachovDmitriy/Course-store-product/blob/master/screns/WeatherOfCity.png)
-![Preview](https://github.com/TkachovDmitriy/Course-store-product/blob/master/screns/Detailsinfo.png)
+![Preview](https://github.com/TkachovDmitriy/Course-store-product/blob/master/screens/WeatherOfCity.png)
+![Preview](https://github.com/TkachovDmitriy/Course-store-product/blob/master/screens/Detailsinfo.png)
