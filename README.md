@@ -11,7 +11,7 @@ Install the dependencies and devDependencies and start the server.
 ```sh
 $ git clone https://github.com/TkachovDmitriy/Weather-App-React.git
 $ cd Weather-App-React
-$ npm install -d
+$ npm install -D
 $ npm start
 ```
 
